@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niio Cond — Em manutenção</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: #0c3b5e;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+    }
+
+    .logo {
+      width: min(380px, 80vw);
+      height: auto;
+      /* Fade the image edges so its background blends into the page */
+      -webkit-mask-image:
+        linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+        linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+        linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+      mask-composite: intersect;
+    }
+
+    .status {
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 0.6em;
+      height: 0.6em;
+      margin-right: 0.5em;
+      border-radius: 50%;
+      background-color: #6cc24a;
+      vertical-align: middle;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="logo.png" alt="Niio Cond">
+  <p class="status">Em manutenção</p>
+</body>
+</html>
